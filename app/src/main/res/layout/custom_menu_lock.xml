@@ -1,0 +1,46 @@
+<!-- custom_menu_item.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_menu_lock"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:layout_margin="10dp"
+    android:layout_marginEnd="30dp"
+    android:padding="@dimen/small_gap"
+    android:background="@drawable/rounded_background"
+    android:gravity="center"
+    android:orientation="horizontal"
+
+    >
+
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/small_gap"
+        android:layout_marginEnd="@dimen/big_gap"
+        android:background="@drawable/bg_menu_lock"
+        android:src="@drawable/ic_forword"
+        android:padding="@dimen/small_gap"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/menu_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/colorBlue" />
+
+    <TextView
+        android:id="@+id/menu_title"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:text="Lock"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

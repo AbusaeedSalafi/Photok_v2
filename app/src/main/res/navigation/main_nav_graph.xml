@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~   Copyright 2020-2022 Leon Latsch
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   you may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.lockmedia.applock.gallerymedia.ui.GalleryFragment"
+        android:label="fragment_gallery"
+        tools:layout="@layout/fragment_gallery">
+        <action
+            android:id="@+id/action_galleryFragment_to_settingsHomeFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_to_top"
+            app:exitAnim="@anim/slide_to_bottom" />
+        <action
+            android:id="@+id/action_galleryFragment_to_imageViewerFragment"
+            app:destination="@id/imageViewerFragment"
+            app:enterAnim="@anim/slide_to_top"
+            app:exitAnim="@anim/slide_to_bottom" />
+        <action
+            android:id="@+id/action_galleryFragment_to_unlockFragment"
+            app:destination="@id/unlockFragment"
+            app:enterAnim="@anim/slide_to_top"
+            app:exitAnim="@anim/slide_to_bottom" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.lockmedia.applock.settings.ui.SettingsFragment"
+        android:label="SettingsFragment">
+        <action
+            android:id="@+id/action_settingFragment_to_SettingHomeFrament"
+            app:destination="@id/galleryFragment"
+            app:enterAnim="@anim/slide_to_top"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/setupFragment"
+        android:name="com.lockmedia.applock.setup.ui.SetupFragment"
+        android:label="fragment_setup"
+        tools:layout="@layout/fragment_setup">
+        <action
+            android:id="@+id/action_setupFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/slide_to_bottom"
+            app:popUpTo="@id/setupFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/unlockFragment"
+        android:name="com.lockmedia.applock.unlock.ui.UnlockFragment"
+        android:label="fragment_unlock"
+        tools:layout="@layout/fragment_unlock">
+        <action
+            android:id="@+id/action_unlockFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/slide_to_bottom"
+            app:popUpTo="@id/unlockFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.lockmedia.applock.onboarding.ui.OnBoardingFragment"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onBoardingFragment_to_setupFragment"
+            app:destination="@id/setupFragment"
+            app:enterAnim="@anim/slide_to_top"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@id/onBoardingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.lockmedia.applock.splashscreen.ui.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_unlockFragment"
+            app:destination="@id/unlockFragment"
+            app:enterAnim="@anim/slide_to_top"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_setupFragment"
+            app:destination="@id/setupFragment"
+            app:enterAnim="@anim/slide_to_top"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/imageViewerFragment"
+        android:name="com.lockmedia.applock.imageviewview.ui.ImageViewerFragment"
+        android:label="ImageViewerFragment" >
+        <argument
+            android:name="photo_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_imageViewerFragment_to_videoPlayerFragment"
+            app:destination="@id/videoPlayerFragment"
+            app:enterAnim="@anim/slide_to_top"
+            app:exitAnim="@anim/slide_to_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoPlayerFragment"
+        android:name="com.lockmedia.applock.videoplayer.ui.VideoPlayerFragment"
+        android:label="VideoPlayerFragment">
+        <argument
+            android:name="video"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+</navigation>

@@ -1,0 +1,134 @@
+<!--
+  ~   Copyright 2020-2022 Leon Latsch
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   you may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  -->
+
+<resources>
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/transparent_bg</item> <!-- Use the transparent background -->
+        <item name="android:textColorPrimary">@color/textColor</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:actionMenuTextColor">@color/textColor</item>
+        <item name="textColorAlertDialogListItem">@color/textColor</item>
+        <item name="android:textColorHint">@color/secondaryTextColor</item>
+        <item name="android:textColorSecondary">@color/secondaryTextColor</item>
+        <item name="android:listDivider">@color/secondaryTextColor</item>
+        <!-- Action Mode -->
+    </style>
+
+
+
+    <!-- Theme for Splash Screen, will be set back to AppTheme before activity.onCreate() -->
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/background</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="FragmentScreenTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <!-- TEXT VIEW -->
+    <style name="TextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/nunito_sans_regular</item>
+        <item name="android:scrollbarSize">0dp</item>
+    </style>
+
+    <style name="LightDetailTextViewStyle" parent="TextViewStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="LabelTextViewStyle" parent="TextViewStyle">
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LightLabelTextViewStyle" parent="LabelTextViewStyle">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="BigTextViewStyle" parent="TextViewStyle">
+        <item name="android:fontFamily">@font/amaranth_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="VeryBigTextViewStyle" parent="@style/TextViewStyle">
+        <item name="android:fontFamily">@font/amaranth_bold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="AppNameTitleStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/amaranth_bold</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <!-- EDIT TEXT -->
+
+    <!-- BUTTON -->
+    <style name="buttonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@font/nunito_sans_semi_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <!-- PROGRESS BAR -->
+    <style name="ProgressBarHorizontalStyle" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/bg_thick_progress_bar</item>
+        <item name="android:minHeight">15dip</item>
+        <item name="android:maxHeight">15dip</item>
+    </style>
+
+    <!-- TOOLBAR -->
+    <style name="toolbarStyle" parent="AppTheme">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColorSecondary">@color/textColor</item>
+        <item name="android:textColorPrimary">@color/textColor</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="darkToolbarStyle" parent="toolbarStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <!-- BOTTOM SHEET DIALOG -->
+
+    <!-- DIALOG -->
+    <style name="LinearDialogStyle">
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!-- ALERT DIALOG -->
+
+    <!-- SETTINGS -->
+</resources>

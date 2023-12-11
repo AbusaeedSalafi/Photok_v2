@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.lockmedia.applock.gallerymedia.ui.GalleryViewModel" />
+
+        <variable
+            name="context"
+            type="com.lockmedia.applock.gallerymedia.ui.GalleryFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/toolbar_color"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/galleryToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+
+                android:background="@color/toolbar_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleTextColor="@color/transparent_black">
+
+                <TextView
+                    android:id="@+id/toolbarTitle"
+                    style="@style/AppNameTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="50dp"
+                    android:text="@string/app_name"
+                    android:textColor="#2D2D2D"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <include
+                    android:id="@+id/customMenu"
+                    layout="@layout/custom_menu_lock"
+                    android:layout_width="140dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/big_gap" />
+
+            </androidx.appcompat.widget.Toolbar>
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".gallerymedia.ui.GalleryFragment">
+
+            <LinearLayout
+                android:id="@+id/galleryPlaceholder"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.placeholderVisibility}"
+
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:alpha="0.3"
+                    android:src="@drawable/ic_vault_colored" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="@string/gallery_placeholder"
+                    android:textAlignment="center"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/small_gap"
+                android:layout_marginEnd="@dimen/small_gap"
+
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout_bottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_gap"
+                    android:divider="@drawable/bg_bottom_sheet"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:id="@+id/galleryAllPhotosTitle"
+                        style="@style/LabelTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/small_gap"
+                        android:text="@string/gallery_all_photos_label"
+                        android:visibility="@{viewModel.labelsVisibility}" />
+
+                    <TextView
+                        android:id="@+id/galleryAllPhotosAmount"
+                        style="@style/LabelTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{viewModel.labelsVisibility}"
+                        tools:text="(100)" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/galleryPhotoGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical" />
+
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorBlue"
+                android:onClick="@{() -> context.showInterstitialAd()}"
+                android:src="@drawable/ic_add"
+                android:tint="@android:color/white"
+
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout_bottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.96"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.98" />
+
+
+            <FrameLayout
+                android:id="@+id/linearLayout_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/my_template">
+
+                <include
+                    android:id="@+id/customNavigationLayout"
+                    layout="@layout/custom_bottom_navigation_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_gravity="bottom"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:menu="@menu/bottom_nav_menu" />
+            </FrameLayout>
+
+            <com.google.android.gms.ads.nativead.NativeAdView
+                android:id="@+id/my_template"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:layout_constraintTop_toBottomOf="parent"
+               />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+</layout>
