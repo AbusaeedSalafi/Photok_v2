@@ -162,7 +162,11 @@
     <string name="onboarding_skip"><u>Skip</u></string>
 
     <string name="onboarding_slide1_title">Welcome</string>
-    <string name="onboarding_slide1_description">Securely store and protect your private photos and videos with our Photo Vault App. Enjoy password protection, biometric authentication,and advanced privacy features for ultimate peace of mind.</string>
+    <string name="onboarding_slide1_description">
+        Securely store and protect your private photos and videos with our
+        Photo Vault App. Enjoy password protection,
+        biometric authentication,and advanced privacy
+        features for ultimate peace of mind.</string>
     <string name="onboarding_slide2_title">Create a password</string>
     <string name="onboarding_slide2_description">Protect your private media with a password in our Photo Vault App. Ensure exclusive access to your sensitive photos and videos for enhanced security and peace of mind.</string>
     <string name="onboarding_slide3_title">Start Importing</string>

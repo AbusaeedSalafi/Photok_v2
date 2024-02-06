@@ -37,8 +37,7 @@ import javax.inject.Inject
  * @author Leon Latsch
  */
 @AndroidEntryPoint
-class OnBoardingFragment :
-    BindableFragment<FragmentOnboardingBinding>(R.layout.fragment_onboarding) {
+class OnBoardingFragment : BindableFragment<FragmentOnboardingBinding>(R.layout.fragment_onboarding) {
 
     @Inject
     lateinit var config: Config

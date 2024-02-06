@@ -61,14 +61,7 @@ class SplashScreenFragment : Fragment(R.layout.fragment_splash_screen) {
             }
         }
         viewModel.checkApplicationState()
-    /*    viewModel.addOnPropertyChange<AppStartState>(com.lockmedia.applock.BR.appStartState) {
-            when (it) {
-                AppStartState.FIRST_START -> navigate(R.id.action_splashScreenFragment_to_onBoardingFragment)
-                AppStartState.SETUP -> navigate(R.id.action_splashScreenFragment_to_setupFragment)
-                AppStartState.LOCKED -> navigate(R.id.action_splashScreenFragment_to_unlockFragment)
-            }
-        }
-        viewModel.checkApplicationState()*/
+
     }
 
 

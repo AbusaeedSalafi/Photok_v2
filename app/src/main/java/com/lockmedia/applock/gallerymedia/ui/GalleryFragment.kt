@@ -73,7 +73,7 @@ class GalleryFragment : BindableFragment<FragmentGalleryBinding>(R.layout.fragme
     private var mInterstitialAd: InterstitialAd? = null
     var adRequest = AdRequest.Builder().build()
     private var isAdShown = false
-//    lateinit var mAdView : AdView
+    lateinit var mAdView : AdView
     private var actionMode: ActionMode? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -81,11 +81,13 @@ class GalleryFragment : BindableFragment<FragmentGalleryBinding>(R.layout.fragme
 
         setToolbar(binding.galleryToolbar)
         setupGridView()
+
         MobileAds.initialize(requireContext()) {}
+        mAdView = view.findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
 
-
-//        mAdView.loadAd(adRequest)
-        //  bannerAdsfn()
+         // bannerAdsfn()
         loadInterstitialAd()
         adapter.isMultiSelectMode.observe(viewLifecycleOwner) {
             if (it) {
